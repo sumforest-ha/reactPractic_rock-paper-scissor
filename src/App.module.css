@@ -8,6 +8,9 @@
   margin: 80px 0 32px;
   text-align: center;
 }
+.button {
+  margin: 30px 0
+}
 
 .box {
   border-radius: 32px;

@@ -1,11 +1,11 @@
 import { useState } from "react"
 import Button from "./Button/Button"
 import HandButton from "./HandButton/HandButton"
-import HandIcon from "./HandIcon/HandIcon";
-import ResultCard from "./ResultCard/ResultCard";
 import { generateRandomHand } from './utils';
 import { getResult } from "./utils";
+import ResultCard from "./ResultCard/ResultCard";
 import styles from "./App.module.css"
+import zapImg from "./assets/zap.svg"
 import rotateImg from "./assets/rotate-cw.svg"
 
 const INITIAL_VALUE = 'rock'
@@ -43,9 +43,15 @@ function App() {
         <div className={styles.box}>
         <h2 className={styles.subtitle}>패를 골라주세요</h2>
         <div className={styles.handButtons}>
-          <HandButton value='scissor' onClick={() => handleButtonClick('scissor')}/>
-          <HandButton  value='rock' onClick={() => handleButtonClick('rock')}/>
-          <HandButton  value= 'paper' onClick={() => handleButtonClick('paper')}/>
+          <HandButton 
+            value='scissor' 
+            onClick={() => handleButtonClick('scissor')}/>
+          <HandButton  
+            value='rock' 
+            onClick={() => handleButtonClick('rock')}/>
+          <HandButton  
+            value= 'paper' 
+            onClick={() => handleButtonClick('paper')}/>
         </div>
         </div>
         <div className={styles.box}>
@@ -57,7 +63,7 @@ function App() {
             score={score} 
             result={getResult(hand,otherHand)}
           />
-          <br/>
+          <img src={zapImg} art="vs" />
           <ResultCard 
             name='상대' 
             hand={otherHand} 
@@ -68,10 +74,10 @@ function App() {
           <h2 className={styles.subtitle}>승부 기록</h2>
           <div className={styles.gameHistory}>{gameHistory.join(', ')}</div>
           <div className={styles.resetButton}>
-          <Button onClick={handleClearClick}>
-            <img src={rotateImg} alt='처음부터'/>
-            처음부터
-          </Button>
+            <Button className={styles.button} onClick={handleClearClick}>
+              <img src={rotateImg} alt='처음부터'/>
+              처음부터
+            </Button>
           </div>
         </div> 
     </div>

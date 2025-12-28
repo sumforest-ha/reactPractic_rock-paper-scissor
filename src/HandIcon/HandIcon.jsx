@@ -7,6 +7,7 @@ const HANDIMAGES = {
       scissor : scissorImg,
       paper : paperImg,
     }
+    
 function HandIcon({ value = 'rock', }) {
   return (
   <img src={HANDIMAGES[value]} art={value}/>
